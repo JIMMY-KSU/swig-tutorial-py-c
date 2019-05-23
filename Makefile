@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ####################################
-######## 			MAKEFILE			########
+########      MAKEFILE      ########
 ####################################
 
 PYTHON = "python3"
@@ -12,7 +12,7 @@ default: build
 
 
 ##################
-#### BUILD		####
+####   BUILD  ####
 
 build: buildc buildpy
 
@@ -23,13 +23,13 @@ buildpy: test.py setup.py
 
 
 ##################
-#### CLEANUP	####
+#### CLEANUP  ####
 
 clean: FORCE
 	rm -rf *.so build */*wrap.c __pycache__
 
 
 ##################
-#### DUMMY		####
+####   DUMMY  ####
 
 FORCE: ;
