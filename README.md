@@ -4,8 +4,8 @@ working through tutorials to understand python/c extension modules
 
 ### workflow
 - plain C functions, no object oriented stuff, no C/Python API (`Python.h` stuff)
-  1. write a C file `something/something_else.c`
-  1. expose certain methods to SWIG in `something/something_else.i`
+  1. write a C file `something_else.c`
+  1. expose certain methods to SWIG in `something_else.i`
   1. write module descriptor in `setup.py` and add instruction to set it up in `__main__` (see examples)
   1. `make`:
       - define which version of `python` to use at the top of Makefile.
@@ -13,12 +13,12 @@ working through tutorials to understand python/c extension modules
         therefore it is important that you follow all previous steps carefully, otherwise the modules will not
         get exposed to `make`.
   1. import in a py script as if you'd import a python module: `from something import something_else`
-  
+
   examples:
-  - `example/example.{c,i}`; `test.py`
-  
+  - `example.{c,i}`; `test.py`
+
 - object oriented stuff
-  
+
   WIP
 
 

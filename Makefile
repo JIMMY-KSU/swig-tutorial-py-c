@@ -14,20 +14,30 @@ default: build
 ##################
 ####   BUILD  ####
 
-build: buildc buildpy
+build: buildc buildpy clean_nonessential
 
 buildc: $(wildcard MODULE_TARGETS) setup.py
-	$(PYTHON) setup.py build_ext --inplace
+	$(PYTHON) setup.py build_ext
+	# $(PYTHON) setup.py install
 
 buildpy: test.py setup.py
 
 
 ##################
+####   TEST   ####
+
+test: FORCE
+	$(PYTHON) test.py
+
+
+##################
 #### CLEANUP  ####
 
-clean: FORCE
-	rm -rf *.so build */*wrap.c __pycache__
+clean: clean_nonessential FORCE
+	rm -rf *.so
 
+clean_nonessential: FORCE
+	rm -rf build *wrap.c __pycache__
 
 ##################
 ####   DUMMY  ####
