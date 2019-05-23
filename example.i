@@ -2,13 +2,13 @@
 %module example
 %{
 /* Put header files here or function declarations like below */
-extern double My_variable;
+/* extern double My_variable;
 extern int fact(int n);
 extern int my_mod(int x, int y);
-extern char *get_time(void);
+extern char *get_time(void); */
+#include "example.h"
 %}
 
-extern double My_variable;
-extern int fact(int n);
-extern int my_mod(int x, int y);
-extern char* get_time(void);
+int fact(int n);
+int my_mod(int x, int y);
+char* get_time(void);
