@@ -4,7 +4,9 @@
 ######## 			MAKEFILE			########
 ####################################
 
-MODULE_TARGETS = $("./generate_targets.py")
+PYTHON = "python3"
+MODULE_TARGETS = $("PYTHON ./generate_targets.py")
+
 
 default: build
 
@@ -15,7 +17,7 @@ default: build
 build: buildc buildpy
 
 buildc: $(wildcard MODULE_TARGETS) setup.py
-	python3 setup.py build_ext --inplace
+	$(PYTHON) setup.py build_ext --inplace
 
 buildpy: test.py setup.py
 
